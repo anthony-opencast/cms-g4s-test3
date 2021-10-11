@@ -206,7 +206,7 @@ router.post('/g4s3/user-research', function(req, res) {
 // used-calculator-rp
 router.post('/g4s3/used-calculator-rp', function(req, res) {
   if (req.body['calc-used'] === 'calc-no') {``
-    res.redirect('other-parent-income');
+    res.redirect('calc-info-rp');
   } else {
     res.redirect('options-receiving');
   }
@@ -215,9 +215,24 @@ router.post('/g4s3/used-calculator-rp', function(req, res) {
 
 // used-calculator-pp
 router.post('/g4s3/used-calculator-pp', function(req, res) {
+  if (req.body['calc-used'] === 'calc-no') {``
+    res.redirect('calc-info-pp');
+  } else {
     res.redirect('options-paying');
+  }
+  });
+
+// calc-info-pp
+router.post('/g4s3/calc-info-pp', function(req, res) {
+  res.redirect('options-paying');
 });
 
+
+// calc-info-rp
+router.post('/g4s3/calc-info-rp', function(req, res) {
+  res.redirect('options-receiving');
+});
+    
 
 
 // Routes end
