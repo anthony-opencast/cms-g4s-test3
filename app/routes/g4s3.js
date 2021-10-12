@@ -185,9 +185,21 @@ router.post('/g4s3/options-receiving', function(req, res) {
 router.post('/g4s3/choice', function(req, res) {
   if (req.body['choice'] === 'own-arrangement') {``
     res.redirect('make-own-arrangement');
+  } else if (req.body['choice'] === 'talk-op'){
+    res.redirect('talk-to-OP');
   } else {
     res.redirect('user-research');
   }
+});
+
+// talk-to-OP
+router.post('/g4s3/talk-to-OP', function(req, res) {
+    res.redirect('talk-to-OP-URN');
+});
+
+// talk-to-OP-URN
+router.post('/g4s3/talk-to-OP-URN', function(req, res) {
+    res.redirect('user-research');
 });
 
 
@@ -232,7 +244,7 @@ router.post('/g4s3/calc-info-pp', function(req, res) {
 router.post('/g4s3/calc-info-rp', function(req, res) {
   res.redirect('options-receiving');
 });
-    
+
 
 
 // Routes end
