@@ -187,9 +187,16 @@ router.post('/g4s3/choice', function(req, res) {
     res.redirect('make-own-arrangement');
   } else if (req.body['choice'] === 'talk-op'){
     res.redirect('talk-to-OP');
+  } else if (req.body['choice'] === 'use-cms'){
+    res.redirect('biological-parent');
   } else {
     res.redirect('user-research');
   }
+});
+
+// biological-parent
+router.post('/g4s3/biological-parent', function(req, res) {
+    res.redirect('user-research');
 });
 
 // talk-to-OP
